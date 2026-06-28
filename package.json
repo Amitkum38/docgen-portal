@@ -1,0 +1,23 @@
+{
+  "name": "pdf-generator-Digital Document Generator",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:full": "concurrently -n card,web -c green,blue \"npm run card-server\" \"npm run dev\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "card-server": "npm start --prefix ../backend"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^10.0.3",
+    "vite": "^5.4.8"
+  }
+}
