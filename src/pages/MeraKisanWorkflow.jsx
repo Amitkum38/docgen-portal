@@ -5,8 +5,10 @@ import { UserRoute } from '../components/ProtectedRoute.jsx'
 import { CardFrontSvg, CardBackSvg } from '../components/KisanCardSvg.jsx'
 import './MeraKisanWorkflow.css'
 // Dev: Vite proxies /health and /extract to localhost:9000 (npm run dev:full).
-// Prod: set VITE_API_URL to your deployed card server.
-const API = import.meta.env.DEV ? '' : (import.meta.env.VITE_API_URL ?? '')
+// Prod: VITE_API_URL or default Render backend.
+const API = import.meta.env.DEV
+  ? ''
+  : (import.meta.env.VITE_API_URL || 'https://docgen-portal-backend.onrender.com')
 const EMPTY = {
   name: '',
   co: '',

@@ -1,6 +1,8 @@
 // Dev: Vite proxies /auth, /health, /extract to localhost:9000.
-// Prod: set VITE_API_URL to your deployed backend URL.
-const API = import.meta.env.DEV ? '' : (import.meta.env.VITE_API_URL ?? '')
+// Prod: VITE_API_URL or default Render backend.
+const API = import.meta.env.DEV
+  ? ''
+  : (import.meta.env.VITE_API_URL || 'https://docgen-portal-backend.onrender.com')
 
 async function api(path, options = {}) {
   const resp = await fetch(`${API}${path}`, {
